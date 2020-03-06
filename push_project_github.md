@@ -17,6 +17,9 @@
 
 1. open bash terminal
 2. pilih directory
-3. git add .
-4. git commit -m 'test1'
-5. git push
+3. git init
+4. git add .
+5. git commit -m 'test1'
+6. git remote add origin *repository_URL*
+7. git remote -v
+8. git push origin master/ git push -f origin master (jika file tidak bisa dipush)
