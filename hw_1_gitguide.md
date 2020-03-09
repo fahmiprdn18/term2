@@ -6,181 +6,209 @@ source : [link](http://rogerdudler.github.io/git-guide/)
 
 # Panduan Singkat Pakai Git
 
-## 1. **Setup**
+## Setup 
 
-* Pilih git installer sesuai OS yang dipakai
-    > * [OSX/Mac](http://git-scm.com/download/mac)
-    > * [Windows](http://msysgit.github.io/)
-    > * [Lnux](http://git-scm.com/book/en/Getting-Started-Installing-Git)
+Pilih git installer sesuai OS yang dipakai:  
+    [OSX/Mac](http://git-scm.com/download/mac)  
+    [Windows](http://msysgit.github.io/)  
+    [Lnux](http://git-scm.com/book/en/Getting-Started-Installing-Git)  
 
-## 2. **Membuat Repository Baru**
+## Membuat Repository Baru
 
-1. Buat directory baru, buka, jalanin di bash/terminal, ketik : 
-    >`git init` 
-    ```
-    untuk membuat git repository baru
-    ```
-## 3. **Checkout Repository**
+Buat directory baru, buka, jalanin di bash/terminal, ketik: 
+```
+git init
+```
+untuk membuat git repository baru
+    
+## Checkout Repository
 
-1. Membuat salinan repository, ketik :
-    > `git clone /path/to/repository`
-    ```
-    saat menggunakan remote server, ketik :
-    ```
-    > `git clone username@host: /path/to/repository`
+Membuat salinan repository, ketik :
+```
+git clone /path/to/repository
+```  
+    
+saat menggunakan remote server, ketik :
+```
+git clone username@host: /path/to/repository
+```
 
-## 4. **Workflow**
+## Workflow
 
 Repository kita terdiri dari 3 *trees* dan dikelola oleh *git*.
 
-1. Yang pertama adalah **`working directory`**, yaitu tahapan **add**. 
->_`Dimana sih kita bekerja atau menyimpan apa yang kita kerjakan?`_ Nah, di **working directory** ini tempatnya. 
-2. Yang kedua adalah **`index`**, dan merupakan tahapan **stage**.
->_`Lalu apa tahapan selanjutnya?`_   
-File yang kita kerjakan kita masukan ke tahap persiapan, dimana file tersebut sudah siap nih untuk diserah-terimakan, dan **index** merupakan tempatnya. 
-3. Yang terakhir adalah **`head`**, merupakan tahapan **commit**.
->_`Sudah siap unjuk gigi?`_  
-Sudah, tapi tunggu dulu. Disini lah tempatnya, Dimana kita telah melakukan pekerjaan kita, lalu menyusun pekerjakan yang telah kita kerjakan, nah sekarang adalah tahap serah-terima, dimana tahapan ini disebut **head**.
+1. Yang pertama adalah **_working directory_**, yaitu tahapan **add**.
 
-```
+    >_Dimana sih kita bekerja atau menyimpan apa yang kita kerjakan?_ 
+
+    Nah, di **working directory** ini tempatnya. 
+
+2. Yang kedua adalah **index**, dan merupakan tahapan **stage**.
+    >_Lalu apa tahapan selanjutnya?_  
+    
+    File yang kita kerjakan kita masukan ke tahap persiapan, dimana file tersebut sudah siap nih untuk diserah-terimakan, dan **index** merupakan tempatnya. 
+3. Yang terakhir adalah **head**, merupakan tahapan **commit**.
+    >_Sudah siap unjuk gigi/serah terima?_  
+
+    Sudah, tapi tunggu dulu. Disini lah tempatnya, Dimana kita telah melakukan pekerjaan kita, lalu menyusun pekerjakan yang telah kita kerjakan, nah sekarang adalah tahap serah-terima, dimana tahapan ini disebut **head**.
+
+
 Analogi saya adalah seperti saat kita siap untuk ikut dalam lomba, melakukan olah fisik, mendaftar, dan mengikuti perlombaan. Mudah - mudahan gak salah yah.
-```
 
-![workflow](directory_workflow.png)
+![workflow](img/directory_workflow.png)
 
-## 4. Add & Commit
+## Add & Commit
 
 * Jika ada perubahan atau pembaharuan (tambahkan ke dalam tahapan **index**), Ketik :
-
-> `git add <namafile>`
-
-> `git add .`
-
+    ```
+    git add <namafile>
+    git add .
+    ```
 * Ini merupakan tahapan awal untuk memastikan bahwa git bekerja. Selanjutnya, Simpan perubahan ini dengan mengetikkan :
-
-> `git commit -m 'checkpoint'`
-
+    ```
+    git commit -m 'checkpoint'
+    ```
 * Sekarang, file yang kita rubah telah tersimpan pada tahap **head**, tapi belum pada _remote repository_ milik kita.
 
 ## 5. Pushing Changes
 
 * File yang sudah disimpan pada tahapan **head**, kita kirimkan ke dalam _remote repository_, Ketik :
 
-> `git push origin master`
+    ```
+    git push origin master
+    ```
 
-* Rubah _`master`_ ke branch yang kamu inginkan untuk mengirim file yang disiapkan pada tahap **`index`**.
+* Rubah _master_ ke branch yang kamu inginkan untuk mengirim file yang disiapkan pada tahap **index**. 
 
 * jika kamu tidak melakukan _`action cloned an existing repository`_ dan ingin menghubungkan _repository_ milik kita dengan _remote server_, kamu perlu menambahkan dengan mengetik :
+    ```
+    git remote add origin <server>
+    ```
 
-> `git remote add origin <server>`
+* Sekarang, kamu dapat mengirim perubahan yang telah dilakukan ke _selected remote server_.
 
-* Sekarang, kamu dapat mengirim perubahan yang telah dilakukan ke _`selected remote server`_.
+## Branching
 
-## 6. Branching
+**Branching** : _Branch_, yang dalam bahasa indonesia berarti cabang. _Branching_ merupakan pencabangan yang digunakan untuk _mendevelop fiture_ terisolasi satu sama lain. _Master Branch_ adalah si _default_ saat kamu membuat _repository_. Gunakan cabang lain untuk mendevelop, dan gabungkan kembali ke _master branch_ setelah selesai.
 
-* **`Branching`** : _Branch_, yang dalam bahasa indonesia berarti cabang. _`Branching`_ merupakan pencabangan yang digunakan untuk _mendevelop fiture_ terisolasi satu sama lain. _Master Branch_ adalah si _default_ saat kamu membuat _repository_. Gunakan cabang lain untuk mendevelop, dan gabungkan kembali ke _master branch_ setelah selesai.
+![branching](img/branching.png)
 
-![branching](branching.png)
 
-```
 Buat branch baru dengan nama "feature_x" dan untuk memakai lakukan switch, ketik :
 ```
-> `git checkout -b feature_x`
+git checkout -b feature_x
+```
+
+
+switch kembali ke master branch
 
 ```
-switch kembali ke master branch
+git checkout master
 ```
-> `git checkout master`
-```
+
 dan delete branch nya lagi
 ```
-> `git branch -d feature_x`
+git branch -d feature_x
+```
+
+Branch tidak tersedia untuk yg lain (_not available to others_) kecuali kalau kamu push ke branch pada repository milik kita.
 
 ```
-Branch tidak tersedia untuk yg lain (not available to others) kecuali kalau kamu push ke branch pada repository milik kita.
+git push origin <branch>
 ```
-> `git push origin <branch>`
 
-## 7. Update & Merge
+## Update & Merge
 
-* Untuk mengupdate *local repository* milik kita ke *commit* terbaru, ketik :
+* Untuk mengupdate *local repository* milik kita ke *commit* terbaru, ketik `git pull` di _working directory_ untuk *fetch* dan *merge remote changes*.
 
-> `git pull`
+* Untuk menggabungkan _branch_ lainnya ke _branch_ milik kita (e.g master), gunakan `git merge <branch>`.
 
-di _working directory_ untuk *fetch* dan *merge remote changes*.
+* di beberapa kasus _git_ mencoba meng-_auto-merge_ perubahan. Sayangnya, ini tidak selalu memungkinkan dan mengakibatkan konflik. Kamu bertanggungjawab untuk mem-_merge_ konflik tersebut secara manual dengan mengedit file yang ditampilkan oleh _git_. Setelah diubah, kamu harus menandai perubahan tersebut dengan mem-_merge_ dengan mengetik `git add <filename>`
 
-* Untuk menggabungkan _branch_ lainnya ke _branch_ milik kita (e.g master), gunakan :
+* sebelum _merging_ diubah, kamu bisa melihat _preview_ dengan menggunakan `git diff <source_branch> <target_branch>`
 
-> `git merge <branch>`
+## Tagging
 
-* di beberapa kasus _git_ mencoba meng-_auto-merge_ perubahan. Sayangnya, ini tidak selalu memungkinkan dan mengakibatkan konflik. Kamu bertanggungjawab untuk mem-_merge_ konflik tersebut secara manual dengan mengedit file yang ditampilkan oleh _git_. Setelah diubah, kamu harus menandai perubahan tersebut dengan mem-_merge_ dengan mengetik :
+**_Tagging_** direkomendasikan untuk membuat _tag_ untuk _software release_. Konsep ini diketahui sudah ada di **SVN**. Kamu bisa membuat _tag_ baru dengan nama 1.0.0 dengan meng-eksekusi
 
-> `git add <filename>`
-
-* sebelum _merging_ diubah, kamu bisa melihat _preview_ dengan menggunakan 
-
-> `git diff <source_branch> <target_branch>`
-
-## 8. Tagging
-
-**_`Tagging`_** direkomendasikan untuk membuat _tag_ untuk _software release_. Konsep ini diketahui sudah ada di **`SVN`**. Kamu bisa membuat _tag_ baru dengan nama 1.0.0 dengan meng-eksekusi
-
->`git tag 1.0.0 1b2e1d63ff`
+```
+git tag 1.0.0 1b2e1d63ff
+```
 
 **1b2e1d63ff** ditetapkan sebagai 10 karakter pertama dari _commit id_ yang kamu inginkan sebagai referensi dengan _tag_ mu. Kamu bisa mendapatkan _commit id_ dengan meilhatnya.
 
-## 9. Log
+## Log
 
 Dalam situasi sederhana, kamu bisa mempelajari _history repository_ menggunakan :
 
->`git log`
+```
+git log
+```
 
 Kamu bisa menambahkan banyak parameter untuk membuat tampilan log seperti yang kamu inginkan. Untuk meilhat _commit_ dari penulis, ketik :
-
->`git log --author=bob`
-
+```
+git log --author=bob
+```
 Untuk meilhat _compressed log_ dimana setiap _commit_ ada pada satu line :
 
->`git log --pretty=oneline`
+```
+git log --pretty=oneline
+```
 
-Atau mungkin kamu ingin melihat sebuah **`ASCII`** _art tree_ dari seluruh _branch_, hias dengan nama dari _tag_ dan _branch_ :
+Atau mungkin kamu ingin melihat sebuah **ASCII** _art tree_ dari seluruh _branch_, hias dengan nama dari _tag_ dan _branch_ :
 
->`git log --name-status`
+```
+git log --name-status
+```
 
 Hanya beberapa parameter yang mungkin dapat anda gunakan, untuk lebih lanjut dapat dilihat di :
 
->`git log --help`
+```
+git log --help
+```
 
-## 10. Replace Local Changes
+## Replace Local Changes
 
 Terkadang kamu membuat sebuah kesalahan, untuk memastikan ini tak akan terjadi, kamu bisa mengganti _local changes_ menggunakan command
 
->`git checkout -- <filename>`
+```
+git checkout -- <filename>
+```
 
 Ini mengganti perubahan di dalam _working tree_ dengan _last content_ di *HEAD*. Perubahan siap ditambahkan ke dalam _index_, sebagai file baru, dan akan disimpan.
 
 Jika ingin menaruh seluruh perubahan dan _local commit_, ambil history terbaru dari server dan arahkan _branch master local_ ke sana seeperti ini :
 
->`git fetch origin`
->`git reset --hard origin/master`
+```
+git fetch origin
+git reset --hard origin/master
+```
 
-## 11. Useful Hints
+## Useful Hints
 
 _Built-in git GUI_
 
->`gitk`
+```
+gitk
+```
 
 _colorful git output_
 
->`git config color.ui true`
+```
+git config color.ui true
+```
 
 menampilkan log hanya dalam satu line tiap _commit_
 
->`git config format.pretty oneline`
+```
+git config format.pretty oneline
+```
 
-menggunakan _`adding`_ interaktif
+menggunakan _adding_ interaktif
 
->`git add -i`
+```
+git add -i
+```
 
 ### Link & Resources
 
