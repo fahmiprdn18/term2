@@ -80,7 +80,7 @@ Analogi saya adalah seperti saat kita siap untuk ikut dalam lomba, melakukan ola
 
 * Rubah _master_ ke branch yang kamu inginkan untuk mengirim file yang disiapkan pada tahap **index**. 
 
-* jika kamu tidak melakukan _`action cloned an existing repository`_ dan ingin menghubungkan _repository_ milik kita dengan _remote server_, kamu perlu menambahkan dengan mengetik :
+* jika kamu tidak melakukan _action cloned an existing repository_ dan ingin menghubungkan _repository_ milik kita dengan _remote server_, kamu perlu menambahkan dengan mengetik :
     ```
     git remote add origin <server>
     ```
