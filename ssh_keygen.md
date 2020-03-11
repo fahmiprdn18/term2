@@ -8,4 +8,4 @@
     - copy output
     - paste di github ssh
     - generate ssh / add ssh / next
-    - 
+    - lelelelele
