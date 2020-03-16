@@ -3,6 +3,8 @@
 #masukan command repo dibawah ini
 sudo add-apt-repository ppa:fossfreedom/arc-gtk-theme-daily -y
 sudo add-apt-repository ppa:papirus/papirus -y
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 #masukan command update dibawah ini
 sudo apt update 
 
@@ -12,7 +14,7 @@ papirus-icon-theme \
 whatsapp-desktop \
 fonts-roboto \
 spotify-client \
-google-chrome-stable
+google-chrome-stable -y
 
 #masukan command config dibawah ini
 
