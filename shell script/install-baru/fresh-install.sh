@@ -2,24 +2,19 @@
 
 #masukan command repo dibawah ini
 sudo add-apt-repository ppa:fossfreedom/arc-gtk-theme-daily -y
-sudo add-apt-repository ppa:papirus/papirus -y
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo add-apt-repository ppa:numix/ppa -y
+
 #masukan command update dibawah ini
 sudo apt update 
 
 #masukan command install dibawah ini
 sudo apt install arc-theme \
-papirus-icon-theme \
-whatsapp-desktop \
-fonts-roboto \
-spotify-client \
-google-chrome-stable -y
+numix-icon-theme-circle -y
 
 #masukan command config dibawah ini
 
 themeVar='Arc-Dark'
-iconVar='Papirus-Dark'
+iconVar='Numix-theme'
 cursorVar='DMZ-Black'
 
 # Window borders.
